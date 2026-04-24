@@ -13,10 +13,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Build Docker Image
-      run: docker build -t ${{ secrets.DOCKER_USER }}/lab4-backend .
+      run: docker build -t devanshukannake/lab4-backend .
 
     - name: Login to DockerHub
       run: echo "${{ secrets.DOCKER_PASS }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
 
     - name: Push Image
-      run: docker push ${{ secrets.DOCKER_USER }}/lab4-backend
+     run: docker push devanshukannake/lab4-backend
