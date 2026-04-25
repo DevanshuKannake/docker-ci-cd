@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker Image
-        run: docker build -t devanshukannake/docker-ci-cd .
+        run: docker build -t devyahere/docker-ci-cd .
 
       - name: Login to DockerHub
         run: echo "${{ secrets.DOCKER_PASS }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
 
       - name: Push Image
-        run: docker push devanshukannake/docker-ci-cd
+        run: docker push devyahere/docker-ci-cd
