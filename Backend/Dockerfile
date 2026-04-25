@@ -2,11 +2,10 @@ FROM node:18
 
 WORKDIR /app
 
-COPY Backend/package.json ./
-RUN npm install
+COPY . .
 
-COPY Backend/ ./
+RUN npm install --prefix Backend
 
 EXPOSE 5000
 
-CMD ["node", "app.js"]
+CMD ["node", "Backend/app.js"]
