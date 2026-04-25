@@ -2,9 +2,9 @@ FROM node:18
 
 WORKDIR /app
 
-COPY Backend ./Backend
+COPY Backend /app/Backend
 
-RUN npm install --prefix Backend
+RUN cd Backend && npm install
 
 EXPOSE 5000
 
